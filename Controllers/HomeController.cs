@@ -17,6 +17,10 @@ namespace Dechiffre.Controllers
         {
             return View();
         }
+        public IActionResult Home()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
@@ -27,6 +31,14 @@ namespace Dechiffre.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpGet]
+        public IActionResult GetData()
+        {
+            // Récupérez les données ici
+            var data = new { message = "Données récupérées avec succès" };
+            return Json(data);
         }
     }
 }

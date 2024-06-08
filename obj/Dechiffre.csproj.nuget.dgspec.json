@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\S4\\MrTahina\\Dechiffre\\Dechiffre.csproj": {}
+    "D:\\S4\\MrTahina\\Des-Chiffres\\Dechiffre.csproj": {}
   },
   "projects": {
-    "D:\\S4\\MrTahina\\Dechiffre\\Dechiffre.csproj": {
+    "D:\\S4\\MrTahina\\Des-Chiffres\\Dechiffre.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\S4\\MrTahina\\Dechiffre\\Dechiffre.csproj",
+        "projectUniqueName": "D:\\S4\\MrTahina\\Des-Chiffres\\Dechiffre.csproj",
         "projectName": "Dechiffre",
-        "projectPath": "D:\\S4\\MrTahina\\Dechiffre\\Dechiffre.csproj",
+        "projectPath": "D:\\S4\\MrTahina\\Des-Chiffres\\Dechiffre.csproj",
         "packagesPath": "C:\\Users\\Chan Kenny\\.nuget\\packages\\",
-        "outputPath": "D:\\S4\\MrTahina\\Dechiffre\\obj\\",
+        "outputPath": "D:\\S4\\MrTahina\\Des-Chiffres\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,9 +49,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "angularjs": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[1.8.2, )"
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             }
           },
           "imports": [
