@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\S4\MrTahina\Des-Chiffres
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/S4/MrTahina/Des-Chiffres/Views/Game/Game.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxHYW1lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/S4/MrTahina/Des-Chiffres/Views/Home/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

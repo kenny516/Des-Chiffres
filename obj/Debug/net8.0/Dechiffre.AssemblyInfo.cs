@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dechiffre")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2fadee0be255d93b0ee968c295dd0b60159252f5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+690577bcd7fe8832e5ac34074fe7473d1822424c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dechiffre")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dechiffre")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
