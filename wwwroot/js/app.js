@@ -72,14 +72,13 @@ app.controller('GameController', function ($scope, $interval, $http) {
     ////////
     $scope.verify = function () {
         $scope.verifvalue = eval($scope.verifChoice);
-        console.log("value final " + $scope.verifChoice);
         console.log("value int final " + $scope.verifvalue);
         $scope.game.value_verify = $scope.verifvalue;
 
         $http.post('/api/game/verify', $scope.game).then(function (response) {
             $scope.playerWin = response.data;
             $scope.finishGame = true;
-            console.log(response.data);
+            console.log("gagnant "+response.data);
         });
     };
 

@@ -3,13 +3,8 @@
 }
 <main ng-controller="GameController" class="mt-5 flex h-full w-full flex-col items-center gap-5">
     <h1 class="text-center text-5xl text-black">
-        Bienvenue dans le Jeu Dechiffre
+        DECHIFFRE CE NOMBRE
     </h1>
-    <div class="flex w-full justify-center">
-        <button class="h-10 w-60 rounded-2xl border border-sky-500 bg-sky-500 text-white" ng-click="generateNumber()">
-            Generer le Nombre
-        </button>
-    </div>
     <div class="mt-5 flex h-10 w-60 items-center justify-center rounded-xl border border-sky-500 text-2xl">
         {{game.targetNumber}}
     </div>
@@ -25,11 +20,11 @@
     </div>
 
     <section class="grid-cols-2 grid gap-8">
-        <div class="rounded-2xl bg-sky-800" ng-repeat="player in game.players">
-            <form class="flex h-80 w-80 flex-col items-center gap-10 rounded-2xl pb-8 pt-8" ng-submit="submitResults($index)">
+        <div class="rounded-2xl bg-sky-800" ng-repeat="player in game.players" ng-init="submit = true">
+            <form class="flex h-80 w-80 flex-col items-center gap-10 rounded-2xl pb-8 pt-8" ng-submit="submitResults($index); submit = false">
                 <label class="underline-offset-8 text-xl text-white underline">{{player.name}}</label>
                 <input class="w-50 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="player.NbrChoice">
-                <div class="flex w-full justify-center">
+                <div class="flex w-full justify-center" ng-show="submit">
                     <button class="h-10 w-1/2 rounded-2xl border border-sky-500 bg-sky-500 text-white" type="submit">
                         VALIDER
                     </button>
@@ -38,10 +33,11 @@
         </div>
     </section>
 
+
     <!-- verification pour le gagnant -->
-    <div ng-show="isTimeUp" ng-if="game.players && game.players.length > game.winner_not_verify">
-        <div class="h-auto w-auto rounded-2xl bg-sky-800">
-            <form class="flex flex-col items-center gap-7 rounded-2xl pb-8 pt-8">
+    <div ng-show="isTimeUp" ng-if="game.players && game.players.length > game.winner_not_verify && game.winner_not_verify>=0">
+        <div ng-init="form_verif = true" ng-show="form_verif" class="h-auto w-auto rounded-2xl bg-sky-800">
+            <form class="flex flex-col items-center gap-7 rounded-2xl pb-8 pt-8" ng-init="submit = true" ng-show="submit">
                 <label class="underline-offset-8 text-2xl text-white underline">
                     Verification du {{game.players[game.winner_not_verify].name}}
                 </label>
@@ -79,18 +75,24 @@
                     {{verifChoice}}
                 </p>
 
-                <div class="flex w-full justify-center">
-                    <button type="button" class="h-10 w-1/3 rounded-2xl border border-sky-500 bg-sky-500 text-white" ng-click="verify()">
+                <div class="flex w-full justify-center" ng-show="submit">
+                    <button type="button" class="h-10 w-1/3 rounded-2xl border border-sky-500 bg-sky-500 text-white" ng-click="verify(); submit = false ;form_verif = false">
                         CONFIRMER
                     </button>
                 </div>
             </form>
         </div>
-
         <div ng-show="finishGame">
             <h1 class="text-3xl font-bold">
-                {{playerWin.name}}
+                WINNER : {{playerWin.name}}
+                NBR_CHOISI : {{playerWin.nbrChoice}}
             </h1>
         </div>
+
+    </div>
+    <div ng-if="game.winner_not_verify < 0">
+        <h1 class="text-2xl font-bold"">
+            AUCUN JOUEUR A GAGNER
+        </h1>
     </div>
 </main>
