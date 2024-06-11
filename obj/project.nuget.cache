@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "WKxaHAcNvhfCII55o3bTM2aR93QDvgycdkq7K7nbhLa/uHyzqyPSLrPGuV0BoTKcvHCfurlHGkk11PfhEGw+7A==",
-  "success": true,
+  "dgSpecHash": "NUGF1zNWZxPddGrGbX9QhwFrbc5ukEzRBhi8peT+gMAH22wcU+AL6Kmj18+JWbPvGSnWq6dzq4Q67Vp6ENqV9Q==",
+  "success": false,
   "projectFilePath": "D:\\S4\\MrTahina\\Des-Chiffres\\Dechiffre.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
@@ -60,15 +60,17 @@
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.build.framework\\17.8.3\\microsoft.build.framework.17.8.3.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.4\\microsoft.codeanalysis.analyzers.3.3.4.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.analyzerutilities\\3.3.0\\microsoft.codeanalysis.analyzerutilities.3.3.0.nupkg.sha512",
-    "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.common\\4.8.0\\microsoft.codeanalysis.common.4.8.0.nupkg.sha512",
-    "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.csharp\\4.8.0\\microsoft.codeanalysis.csharp.4.8.0.nupkg.sha512",
+    "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.common\\4.10.0\\microsoft.codeanalysis.common.4.10.0.nupkg.sha512",
+    "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.csharp\\4.10.0\\microsoft.codeanalysis.csharp.4.10.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.csharp.features\\4.8.0\\microsoft.codeanalysis.csharp.features.4.8.0.nupkg.sha512",
+    "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.csharp.scripting\\4.10.0\\microsoft.codeanalysis.csharp.scripting.4.10.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.csharp.workspaces\\4.8.0\\microsoft.codeanalysis.csharp.workspaces.4.8.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.elfie\\1.0.0\\microsoft.codeanalysis.elfie.1.0.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.features\\4.8.0\\microsoft.codeanalysis.features.4.8.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.razor\\6.0.24\\microsoft.codeanalysis.razor.6.0.24.nupkg.sha512",
-    "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.scripting.common\\4.8.0\\microsoft.codeanalysis.scripting.common.4.8.0.nupkg.sha512",
+    "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.scripting.common\\4.10.0\\microsoft.codeanalysis.scripting.common.4.10.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.codeanalysis.workspaces.common\\4.8.0\\microsoft.codeanalysis.workspaces.common.4.8.0.nupkg.sha512",
+    "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.diasymreader\\2.0.0\\microsoft.diasymreader.2.0.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.dotnet.scaffolding.shared\\8.0.2\\microsoft.dotnet.scaffolding.shared.8.0.2.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.6\\microsoft.entityframeworkcore.8.0.6.nupkg.sha512",
@@ -104,7 +106,7 @@
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\nuget.protocol\\6.9.1\\nuget.protocol.6.9.1.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\nuget.versioning\\6.9.1\\nuget.versioning.6.9.1.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
-    "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
+    "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.collections.immutable\\8.0.0\\system.collections.immutable.8.0.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.composition\\7.0.0\\system.composition.7.0.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.composition.attributedmodel\\7.0.0\\system.composition.attributedmodel.7.0.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.composition.convention\\7.0.0\\system.composition.convention.7.0.0.nupkg.sha512",
@@ -117,9 +119,8 @@
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.formats.asn1\\6.0.0\\system.formats.asn1.6.0.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
-    "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.reflection.metadata\\7.0.0\\system.reflection.metadata.7.0.0.nupkg.sha512",
+    "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.reflection.metadata\\8.0.0\\system.reflection.metadata.8.0.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.reflection.metadataloadcontext\\7.0.0\\system.reflection.metadataloadcontext.7.0.0.nupkg.sha512",
-    "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.security.cryptography.pkcs\\6.0.4\\system.security.cryptography.pkcs.6.0.4.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.security.cryptography.protecteddata\\7.0.0\\system.security.cryptography.protecteddata.7.0.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.security.permissions\\7.0.0\\system.security.permissions.7.0.0.nupkg.sha512",
@@ -130,5 +131,15 @@
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "C:\\Users\\Chan Kenny\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1107",
+      "level": "Error",
+      "message": "Version conflict detected for Microsoft.CodeAnalysis.Common. Install/reference Microsoft.CodeAnalysis.Common 4.10.0 directly to project Dechiffre to resolve this issue. \r\n Dechiffre -> Microsoft.CodeAnalysis.CSharp.Scripting 4.10.0 -> Microsoft.CodeAnalysis.Common (= 4.10.0) \r\n Dechiffre -> Microsoft.VisualStudio.Web.CodeGeneration.Design 8.0.2 -> Microsoft.DotNet.Scaffolding.Shared 8.0.2 -> Microsoft.CodeAnalysis.CSharp.Features 4.8.0 -> Microsoft.CodeAnalysis.Common (= 4.8.0).",
+      "libraryId": "Microsoft.CodeAnalysis.Common",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

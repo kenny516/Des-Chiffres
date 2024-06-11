@@ -53,6 +53,7 @@ app.controller('GameController', function ($scope, $interval, $http) {
     $scope.newGame = function (){
         $http.post("api/game/newGame",$scope.game).then(function (response){
             console.log("atoo zaaa");
+            $scope.timeLeft = 20;
             $scope.game = response.data;
         })
     }
