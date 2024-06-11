@@ -5,6 +5,11 @@
     <h1 class="text-center text-5xl text-black">
         DECHIFFRE CE NOMBRE
     </h1>
+    <div class="flex w-full justify-center" ng-click="newGame()">
+        <button class="flex h-10 w-60 items-center justify-center rounded-2xl border border-sky-500 bg-sky-500 text-white">
+            Generer un nouveau nombre
+        </button>
+    </div>
     <div class="mt-5 flex h-10 w-60 items-center justify-center rounded-xl border border-sky-500 text-2xl">
         {{game.targetNumber}}
     </div>
@@ -22,7 +27,8 @@
     <section class="grid-cols-2 grid gap-8">
         <div class="rounded-2xl bg-sky-800" ng-repeat="player in game.players" ng-init="submit = true">
             <form class="flex h-80 w-80 flex-col items-center gap-10 rounded-2xl pb-8 pt-8" ng-submit="submitResults($index); submit = false">
-                <label class="underline-offset-8 text-xl text-white underline">{{player.name}}</label>
+                <label class="underline-offset-8 text-xl text-white underline">Name :{{player.name}}</label>
+                <label class="underline-offset-8 text-xl text-white">Point : {{player.point}}</label>
                 <input class="w-50 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="player.NbrChoice">
                 <div class="flex w-full justify-center" ng-show="submit">
                     <button class="h-10 w-1/2 rounded-2xl border border-sky-500 bg-sky-500 text-white" type="submit">
@@ -91,7 +97,7 @@
 
     </div>
     <div ng-if="game.winner_not_verify < 0">
-        <h1 class="text-2xl font-bold"">
+        <h1 class="text-2xl font-bold">
             AUCUN JOUEUR A GAGNER
         </h1>
     </div>

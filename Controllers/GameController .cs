@@ -1,7 +1,5 @@
 ﻿using Dechiffre.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 
 namespace DesChiffres.Controllers
 {
@@ -14,8 +12,8 @@ namespace DesChiffres.Controllers
         {
             List<Player> players = new List<Player>
             {
-                new Player { name = "player 1", temps = 0, nbrChoice = -1 },
-                new Player { name = "player 2", temps = 0, nbrChoice = -1 }
+                new Player { name = "player 1", temps = 0, nbrChoice = -1 ,point = 0},
+                new Player { name = "player 2", temps = 0, nbrChoice = -1 ,point = 0}
             };
 
             GameModel? game = new GameModel
@@ -28,6 +26,20 @@ namespace DesChiffres.Controllers
 
             return Json(game);
         }
+
+        [HttpPost("api/game/newGame")]
+        public JsonResult NewGame([FromBody] GameModel game)
+        {
+            game.TargetNumber = _random.Next(100, 1000);
+            game.players[0].nbrChoice = -1;
+            game.players[1].nbrChoice = -1;
+
+            game.winner_not_verify = 10;
+            game.value_verify = 0;
+            game.Numbers = GenerateNumbers(7, 1, 101);
+            return Json(game);
+        }
+        
 
         [HttpPost("api/game/submitresults")]
         public JsonResult SubmitResults([FromBody] GameModel game)

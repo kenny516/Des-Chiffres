@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Dechiffre.Models
+﻿namespace Dechiffre.Models
 {
 
     public class GameModel
@@ -10,7 +8,7 @@ namespace Dechiffre.Models
         public List<Player> players { get; set; }
         // id du winner pas encore verifier
         public int winner_not_verify { get; set; }
-        //valeur a verifier 
+        //valeur a verifier dans le formulaire de verification
         public int value_verify {  get; set; }
 
 
@@ -18,17 +16,19 @@ namespace Dechiffre.Models
 
         public Player VerifyWinner()
         {
-            int IDwinner_not_verify = this.winner_not_verify;
-            Console.WriteLine("verify nbr " + this.value_verify);
+            int IDwinner_not_verify = winner_not_verify;
+            Console.WriteLine("verify nbr " + value_verify);
 
-            if (this.players[IDwinner_not_verify].nbrChoice == this.value_verify)
+            if (players[IDwinner_not_verify].nbrChoice == value_verify)
             {
-                return this.players[IDwinner_not_verify];
+                players[IDwinner_not_verify].point++;
+                return players[IDwinner_not_verify];
             }
             else
             {
-                int otherPlayerID = (IDwinner_not_verify + 1) % this.players.Count;
-                return this.players[otherPlayerID];
+                int otherPlayerID = (IDwinner_not_verify + 1) % players.Count;
+                players[otherPlayerID].point++;
+                return players[otherPlayerID];
             }
         }
 

@@ -27,9 +27,7 @@ app.controller('GameController', function ($scope, $interval, $http) {
 
     $scope.finishGame = false;
     $scope.playerWin = null;
-
-
-
+    
     $http.get('/api/game/index').then(function (response) {
         $scope.game = response.data;
         $scope.choice = angular.copy($scope.game.numbers);
@@ -45,10 +43,21 @@ app.controller('GameController', function ($scope, $interval, $http) {
             $scope.timeIsUpFunction();
         }
     }, 1000);
-
+    
+    // fontion valider reponse d un joueur
     $scope.submitResults = function (playerIndex) {
         $scope.game.players[playerIndex].Temps = 20 - $scope.timeLeft; // Calculer le temps de soumission pour le joueur
     };
+    
+    //fonction rejouer avec nouveau nombre 
+    $scope.newGame = function (){
+        $http.post("api/game/newGame",$scope.game).then(function (response){
+            console.log("atoo zaaa");
+            $scope.game = response.data;
+        })
+    }
+    
+    
 
     // Fonction à appeler lorsque le temps est écoulé
     $scope.timeIsUpFunction = function () {
