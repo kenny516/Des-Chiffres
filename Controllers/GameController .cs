@@ -19,13 +19,21 @@ namespace DesChiffres.Controllers
             GameModel? game = new GameModel
             {
                 TargetNumber = _random.Next(1, 1001),
-                Numbers = GenerateNumbers(7, 1, 101),
+                Numbers = Tools.GenerateNumbers(7, 1, 101),
                 Players = players,
                 Winner_not_verify = 10,
             };
 
             return Json(game);
         }
+
+        [HttpPost("api/game/eval")]
+        public JsonResult Evaluate([FromBody] dynamic data)
+        {
+            string eval = data.eval;
+            return Json(Tools.EvaluateExpression(eval));
+        }
+
 
         [HttpPost("api/game/newGame")]
         public JsonResult NewGame([FromBody] GameModel game)
@@ -36,7 +44,7 @@ namespace DesChiffres.Controllers
 
             game.Winner_not_verify = 10;
             game.Value_verify = 0;
-            game.Numbers = GenerateNumbers(7, 1, 101);
+            game.Numbers = Tools.GenerateNumbers(7, 1, 101);
             return Json(game);
         }
         
@@ -61,7 +69,6 @@ namespace DesChiffres.Controllers
         }
 
 // Action pour retourner la vue Game.cshtml
-
         public IActionResult Game()
         {
             return View();
@@ -69,8 +76,6 @@ namespace DesChiffres.Controllers
         
         
 ////    FONCTION 
-
-
 // Fonction pour afficher les données du jeu
         private void LogGameData(GameModel game)
         {
@@ -92,16 +97,6 @@ namespace DesChiffres.Controllers
         
 
 
-        // Méthode pour générer des nombres aléatoires
-        private List<int> GenerateNumbers(int count, int min, int max)
-        {
-            var numbers = new List<int>();
-            for (var i = 0; i < count; i++)
-            {
-                numbers.Add(_random.Next(min, max));
-            }
-            return numbers;
-        }
     }
 
 }

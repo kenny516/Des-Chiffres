@@ -43,4 +43,17 @@ public class Tools
         }
         return true;
     }
+    
+    
+    // Méthode pour générer des nombres aléatoires
+    public static List<int> GenerateNumbers(int count, int min, int max)
+    {
+        Random _random = new Random();
+        var numbers = new List<int>();
+        for (var i = 0; i < count; i++)
+        {
+            numbers.Add(_random.Next(min, max));
+        }
+        return numbers;
+    }
 }
