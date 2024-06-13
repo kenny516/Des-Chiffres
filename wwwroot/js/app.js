@@ -18,7 +18,8 @@ app.config(function ($routeProvider) {
 
 
 app.controller('GameController', function ($scope, $interval, $http) {
-    $scope.timeLeft = 20; // Set the timer to 60 seconds
+    $scope.timeLeft = 60; // Set the timer to 60 seconds
+    $scope.timeFormat = formatTime($scope.timeLeft);
     $scope.isTimeUp = false;
     $scope.game = {};
 
@@ -31,12 +32,12 @@ app.controller('GameController', function ($scope, $interval, $http) {
     $http.get('/api/game/index').then(function (response) {
         $scope.game = response.data;
         $scope.choice = angular.copy($scope.game.numbers);
-
     });
 
     var timer = $interval(function () {
         if ($scope.timeLeft > 0) {
             $scope.timeLeft--;
+            $scope.timeFormat = formatTime($scope.timeLeft);
         } else {
             $scope.isTimeUp = true;
             $interval.cancel(timer);
@@ -46,14 +47,14 @@ app.controller('GameController', function ($scope, $interval, $http) {
     
     // fontion valider reponse d un joueur
     $scope.submitResults = function (playerIndex) {
-        $scope.game.players[playerIndex].Temps = 20 - $scope.timeLeft; // Calculer le temps de soumission pour le joueur
+        $scope.game.players[playerIndex].Temps = 60 - $scope.timeLeft; // Calculer le temps de soumission pour le joueur
     };
     
     //fonction rejouer avec nouveau nombre 
     $scope.newGame = function (){
         $http.post("api/game/newGame",$scope.game).then(function (response){
             console.log("atoo zaaa");
-            $scope.timeLeft = 20;
+            $scope.timeLeft = 60;
             $scope.game = response.data;
         })
     }
@@ -91,8 +92,13 @@ app.controller('GameController', function ($scope, $interval, $http) {
             console.log("gagnant "+response.data);
         });
     };
-
+    
 });
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${String(remainingSeconds).padStart(2, '0')}`;
+}
 
 
 

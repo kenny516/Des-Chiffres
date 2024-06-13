@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\S4\\MrTahina\\Des-Chiffres\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A3CDACDB-AD78-4F00-B75C-254020C2BAE2}|Dechiffre.csproj|d:\\s4\\mrtahina\\des-chiffres\\dechiffre.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A3CDACDB-AD78-4F00-B75C-254020C2BAE2}|Dechiffre.csproj|solutionrelative:dechiffre.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A3CDACDB-AD78-4F00-B75C-254020C2BAE2}|Dechiffre.csproj|d:\\s4\\mrtahina\\des-chiffres\\wwwroot\\js\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A3CDACDB-AD78-4F00-B75C-254020C2BAE2}|Dechiffre.csproj|solutionrelative:wwwroot\\js\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -58,31 +62,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\S4\\MrTahina\\Des-Chiffres\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\S4\\MrTahina\\Des-Chiffres\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAADQAAAAXAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAIBPwDQAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:34:57.437Z"
+              "WhenOpened": "2024-06-10T09:34:57.437Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "GameModel.cs",
               "DocumentMoniker": "D:\\S4\\MrTahina\\Des-Chiffres\\Models\\GameModel.cs",
               "RelativeDocumentMoniker": "Models\\GameModel.cs",
               "ToolTip": "D:\\S4\\MrTahina\\Des-Chiffres\\Models\\GameModel.cs",
               "RelativeToolTip": "Models\\GameModel.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAADwvzsAAAAnAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAADwvzsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T06:48:03.892Z"
+              "WhenOpened": "2024-06-09T06:48:03.892Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\S4\\MrTahina\\Des-Chiffres\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -90,11 +96,12 @@
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-10T09:34:33.052Z"
+              "WhenOpened": "2024-06-10T09:34:33.052Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\S4\\MrTahina\\Des-Chiffres\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -102,24 +109,25 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-10T09:34:15.114Z"
+              "WhenOpened": "2024-06-10T09:34:15.114Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "app.js",
               "DocumentMoniker": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\js\\app.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\app.js",
               "ToolTip": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\js\\app.js",
               "RelativeToolTip": "wwwroot\\js\\app.js",
-              "ViewState": "AQIAABYAAAAAAAAAAAAuwEAAAAACAAAA",
+              "ViewState": "AQIAACgAAAAAAAAAAAAAADQAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-06-07T19:02:33.829Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\S4\\MrTahina\\Des-Chiffres\\Models\\Player.cs",
               "RelativeDocumentMoniker": "Models\\Player.cs",
@@ -127,11 +135,12 @@
               "RelativeToolTip": "Models\\Player.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T09:40:35.643Z"
+              "WhenOpened": "2024-06-10T09:40:35.643Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Home.cshtml",
               "DocumentMoniker": "D:\\S4\\MrTahina\\Des-Chiffres\\Views\\Home\\Home.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Home.cshtml",
@@ -139,42 +148,57 @@
               "RelativeToolTip": "Views\\Home\\Home.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-08T20:14:37.563Z"
+              "WhenOpened": "2024-06-08T20:14:37.563Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
           "DockedWidth": 290,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
+              "Title": "Dechiffre",
+              "DocumentMoniker": "D:\\S4\\MrTahina\\Des-Chiffres\\Dechiffre.csproj",
+              "RelativeDocumentMoniker": "Dechiffre.csproj",
+              "ToolTip": "D:\\S4\\MrTahina\\Des-Chiffres\\Dechiffre.csproj",
+              "RelativeToolTip": "Dechiffre.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-11T20:40:51.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "GameController .cs",
               "DocumentMoniker": "D:\\S4\\MrTahina\\Des-Chiffres\\Controllers\\GameController .cs",
               "RelativeDocumentMoniker": "Controllers\\GameController .cs",
               "ToolTip": "D:\\S4\\MrTahina\\Des-Chiffres\\Controllers\\GameController .cs",
               "RelativeToolTip": "Controllers\\GameController .cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAwwCoAAAAJAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAwwCoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T06:58:05.585Z"
+              "WhenOpened": "2024-06-09T06:58:05.585Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Game.cshtml",
               "DocumentMoniker": "D:\\S4\\MrTahina\\Des-Chiffres\\Views\\Game\\Game.cshtml",
               "RelativeDocumentMoniker": "Views\\Game\\Game.cshtml",
               "ToolTip": "D:\\S4\\MrTahina\\Des-Chiffres\\Views\\Game\\Game.cshtml",
               "RelativeToolTip": "Views\\Game\\Game.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAATAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-09T10:37:42.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\S4\\MrTahina\\Des-Chiffres\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -182,7 +206,8 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T18:46:35.112Z"
+              "WhenOpened": "2024-06-07T18:46:35.112Z",
+              "EditorCaption": ""
             }
           ]
         }

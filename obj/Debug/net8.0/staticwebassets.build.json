@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oKYGZb6fTcUbazXwdXa1dVrxPcZvFp4pDUSfmoVwI6s=",
+  "Hash": "RDHk4XI9KX+wJA2eVYB0FHxCWPpxVukosvPqopiXXtI=",
   "Source": "Dechiffre",
   "BasePath": "_content/Dechiffre",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\app.js"
+    },
+    {
+      "Identity": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\js\\Helper.js",
+      "SourceId": "Dechiffre",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\",
+      "BasePath": "_content/Dechiffre",
+      "RelativePath": "js/Helper.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Helper.js"
     },
     {
       "Identity": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\js\\site.js",
