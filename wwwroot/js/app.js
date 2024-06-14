@@ -18,7 +18,8 @@ app.config(function ($routeProvider) {
 
 
 app.controller('GameController', function ($scope, $interval, $http) {
-    $scope.timeLeft = 20; // Set the timer to 60 seconds
+    const chronoInit = 20;
+    $scope.timeLeft = chronoInit; // Set the timer to 60 seconds
     $scope.timeFormat = formatTime($scope.timeLeft);
     $scope.isTimeUp = false;
     $scope.game = {};
@@ -39,24 +40,32 @@ app.controller('GameController', function ($scope, $interval, $http) {
             $scope.timeFormat = formatTime($scope.timeLeft);
             $scope.timeLeft--;
             $scope.timeFormat = formatTime($scope.timeLeft);
-        } else {
+        }else if ($scope.timeLeft === 0){
+            $scope.timeFormat = formatTime($scope.timeLeft);
             $scope.isTimeUp = true;
-            $interval.cancel(timer);
+/*            $interval.cancel(timer);*/
             $scope.timeIsUpFunction();
         }
     }, 1000);
 
     // fontion valider reponse d un joueur
     $scope.submitResults = function (playerIndex) {
-        $scope.game.players[playerIndex].Temps = 20 - $scope.timeLeft; // Calculer le temps de soumission pour le joueur
+        $scope.game.players[playerIndex].Temps = chronoInit - $scope.timeLeft; // Calculer le temps de soumission pour le joueur
+        if ($scope.game.players[0].Temps > 0 && $scope.game.players[1].Temps > 0){
+            $scope.timeLeft = 0;
+            console.log("end time")
+        }
     };
 
     //fonction rejouer avec nouveau nombre 
     $scope.newGame = function () {
         $http.post("api/game/newGame", $scope.game).then(function (response) {
-            console.log("atoo zaaa");
-            $scope.timeLeft = 20;
+            console.log("New Game");
             $scope.game = response.data;
+            $scope.verifChoice = "";
+            $scope.finishGame = false;
+            $scope.playerWin = null;
+            $scope.timeLeft = chronoInit;
             $scope.choice = angular.copy($scope.game.numbers);
         })
     }
@@ -83,7 +92,7 @@ app.controller('GameController', function ($scope, $interval, $http) {
 
     ////////
     $scope.verify = function () {
-        $scope.verifvalue = $scope.callEval();
+        $scope.verifvalue = eval($scope.verifChoice);
         console.log("value int final " + $scope.verifvalue);
         $scope.game.value_verify = $scope.verifvalue;
 
@@ -93,18 +102,20 @@ app.controller('GameController', function ($scope, $interval, $http) {
             console.log("gagnant " + response.data);
         });
     }
+
     $scope.callEval = function () {
-        return $http.post('api/game/eval', { eval: $scope.verifChoice })
+        const encodeString = encodeURIComponent($scope.verifChoice)
+        return $http.get('api/game/eval/?eval=' + encodeString)
             .then(function (response) {
+                console.log(response.data);
                 return response.data;
             })
             .catch(function (error) {
                 console.error("Error occurred while fetching data: ", error);
                 throw error;
             });
-    }
+    };
 
-    
 });
 
 
@@ -113,6 +124,7 @@ function formatTime(seconds) {
     const remainingSeconds = seconds % 60;
     return `${minutes}:${String(remainingSeconds).padStart(2, '0')}`;
 }
+
 
 
 

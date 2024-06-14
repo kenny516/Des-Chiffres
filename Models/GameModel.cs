@@ -13,6 +13,7 @@
         //valeur a verifier dans le formulaire de verification
         public int Value_verify { get; set; }
         
+        
         // verification
 
         public Player VerifyWinner()

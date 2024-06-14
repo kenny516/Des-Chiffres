@@ -27,12 +27,13 @@ namespace DesChiffres.Controllers
             return Json(game);
         }
 
-        [HttpPost("api/game/eval")]
-        public JsonResult Evaluate([FromBody] dynamic data)
+        [HttpGet("api/game/eval")]
+        public JsonResult Evaluate(string eval)
         {
-            string eval = data.eval;
             return Json(Tools.EvaluateExpression(eval));
         }
+
+
 
 
         [HttpPost("api/game/newGame")]
@@ -40,7 +41,9 @@ namespace DesChiffres.Controllers
         {
             game.TargetNumber = _random.Next(100, 1000);
             game.Players[0].nbrChoice = -1;
+            game.Players[0].temps = 0;
             game.Players[1].nbrChoice = -1;
+            game.Players[1].temps = 0;
 
             game.Winner_not_verify = 10;
             game.Value_verify = 0;
@@ -86,13 +89,14 @@ namespace DesChiffres.Controllers
             {
                 Console.WriteLine(number);
             }
-            Console.WriteLine("Players : ");
+            Console.WriteLine("Players ///////////////////////");
             foreach (var player in game.Players)
             {
                 Console.WriteLine("Player Name : " + player.name);
                 Console.WriteLine("Player Temps : " + player.temps);
                 Console.WriteLine("Player NbrChoice : " + player.nbrChoice);
             }
+            Console.WriteLine("///////////////////////");
         }
         
 
