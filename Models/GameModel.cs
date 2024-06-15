@@ -11,17 +11,18 @@
         public int Winner_not_verify { get; set; }
 
         //valeur a verifier dans le formulaire de verification
-        public int Value_verify { get; set; }
-        
-        
-        // verification
+        public float Value_verify { get; set; }
+// verification
 
         public Player VerifyWinner()
         {
             int Idwinner_not_verify = Winner_not_verify;
-            Console.WriteLine("verify nbr " + Value_verify);
 
-            if (Players[Idwinner_not_verify].nbrChoice == Value_verify)
+            // Cast de Value_verify en int
+            int valueVerifyAsInt = Convert.ToInt32(Value_verify);
+            Console.WriteLine("Nbr taped =>"+Players[Idwinner_not_verify].nbrChoice+" et verify nbr =>" + valueVerifyAsInt);
+
+            if (Players[Idwinner_not_verify].nbrChoice == valueVerifyAsInt)
             {
                 Players[Idwinner_not_verify].point++;
                 return Players[Idwinner_not_verify];
@@ -30,6 +31,7 @@
             Players[otherPlayerId].point++;
             return Players[otherPlayerId];
         }
+
 
 // Fonction pour déterminer le gagnant temporaire
         public void DetermineWinner(GameModel game)

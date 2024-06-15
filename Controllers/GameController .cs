@@ -18,7 +18,7 @@ namespace DesChiffres.Controllers
 
             GameModel? game = new GameModel
             {
-                TargetNumber = _random.Next(1, 1001),
+                TargetNumber = 0,
                 Numbers = Tools.GenerateNumbers(7, 1, 101),
                 Players = players,
                 Winner_not_verify = 10,

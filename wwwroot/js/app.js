@@ -19,7 +19,7 @@ app.config(function ($routeProvider) {
 
 app.controller('GameController', function ($scope, $interval, $http) {
     const chronoInit = 20;
-    $scope.timeLeft = chronoInit; // Set the timer to 60 seconds
+    $scope.timeLeft = 20; // Set the timer to 60 seconds
     $scope.timeFormat = formatTime($scope.timeLeft);
     $scope.isTimeUp = false;
     $scope.game = {};
@@ -34,6 +34,38 @@ app.controller('GameController', function ($scope, $interval, $http) {
         $scope.game = response.data;
         $scope.choice = angular.copy($scope.game.numbers);
     });
+    
+    $scope.target = 0;
+    $scope.numbers = new Array(7);
+
+    $scope.submitForm = function() {
+        $scope.game.targetNumber = $scope.target;
+        $scope.game.numbers[0] = $scope.numbers[0];
+        $scope.game.numbers[1] = $scope.numbers[1];
+        $scope.game.numbers[2] = $scope.numbers[2];
+        $scope.game.numbers[3] = $scope.numbers[3];
+        $scope.game.numbers[4] = $scope.numbers[4];
+        $scope.game.numbers[5] = $scope.numbers[5];
+        $scope.game.numbers[6] = $scope.numbers[6];
+        
+        $scope.game.players[0].nbrChoice = -1;
+        $scope.game.players[1].nbrChoice = -1;
+        $scope.game.players[0].temps = 0;
+        $scope.game.players[1].temps = 0;
+        $scope.game.winner_not_verify = 10;
+        $scope.game.value_verify = 0;
+        
+        
+        $scope.verifChoice = "";
+        $scope.finishGame = false;
+        $scope.playerWin = null;
+        $scope.timeLeft = chronoInit;
+        $scope.choice = angular.copy($scope.numbers);
+        $scope.isTimeUp = false;
+        
+        
+        console.log("changer"+$scope.choice);
+    };
 
     var timer = $interval(function () {
         if ($scope.timeLeft > 0) {
@@ -71,7 +103,7 @@ app.controller('GameController', function ($scope, $interval, $http) {
     }
 
 
-    // Fonction à appeler lorsque le temps est écoulé
+    // Fonction à appeler lorsque le temps est écoulé determine le winner temp
     $scope.timeIsUpFunction = function () {
         $http.post('/api/game/submitresults', $scope.game).then(function (response) {
             $scope.game = response.data;
@@ -93,7 +125,7 @@ app.controller('GameController', function ($scope, $interval, $http) {
     ////////
     $scope.verify = function () {
         $scope.verifvalue = eval($scope.verifChoice);
-        console.log("value int final " + $scope.verifvalue);
+        console.log("value float final " + $scope.verifvalue);
         $scope.game.value_verify = $scope.verifvalue;
 
         $http.post('/api/game/verify', $scope.game).then(function (response) {
@@ -103,7 +135,7 @@ app.controller('GameController', function ($scope, $interval, $http) {
         });
     }
 
-    $scope.callEval = function () {
+/*    $scope.callEval = function () {
         const encodeString = encodeURIComponent($scope.verifChoice)
         return $http.get('api/game/eval/?eval=' + encodeString)
             .then(function (response) {
@@ -114,7 +146,7 @@ app.controller('GameController', function ($scope, $interval, $http) {
                 console.error("Error occurred while fetching data: ", error);
                 throw error;
             });
-    };
+    };*/
 
 });
 
