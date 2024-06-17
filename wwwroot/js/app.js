@@ -1,21 +1,5 @@
 ﻿var app = angular.module('dechiffreApp', ['ngRoute']);
 
-app.config(function ($routeProvider) {
-    $routeProvider
-        .when('/homepage', {
-            templateUrl: '/Home/Index'
-        })
-        .when('/privacypage', {
-            templateUrl: '/Home/Privacy'
-        })
-        .when('/jouer', {
-            templateUrl: '/Home/Home'
-        })
-        .when('/start', {
-            templateUrl: '/Game/Game'
-        });
-});
-
 
 app.controller('GameController', function ($scope, $interval, $http) {
     const chronoInit = 20;
@@ -35,18 +19,14 @@ app.controller('GameController', function ($scope, $interval, $http) {
         $scope.choice = angular.copy($scope.game.numbers);
     });
     
-    $scope.target = 0;
-    $scope.numbers = new Array(7);
+    $scope.Formtarget = 0;
+    $scope.Formnumbers = new Array(7);
 
     $scope.submitForm = function() {
-        $scope.game.targetNumber = $scope.target;
-        $scope.game.numbers[0] = $scope.numbers[0];
-        $scope.game.numbers[1] = $scope.numbers[1];
-        $scope.game.numbers[2] = $scope.numbers[2];
-        $scope.game.numbers[3] = $scope.numbers[3];
-        $scope.game.numbers[4] = $scope.numbers[4];
-        $scope.game.numbers[5] = $scope.numbers[5];
-        $scope.game.numbers[6] = $scope.numbers[6];
+        $scope.game.targetNumber = $scope.Formtarget;
+        for (let i = 0; i < $scope.game.numbers; i++) {
+            $scope.game.numbers[i] =  angular.copy($scope.Formnumbers[i]);    
+        }
         
         $scope.game.players[0].nbrChoice = -1;
         $scope.game.players[1].nbrChoice = -1;
@@ -156,6 +136,7 @@ function formatTime(seconds) {
     const remainingSeconds = seconds % 60;
     return `${minutes}:${String(remainingSeconds).padStart(2, '0')}`;
 }
+
 
 
 

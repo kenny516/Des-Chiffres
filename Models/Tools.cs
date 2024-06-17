@@ -20,10 +20,10 @@ public class Tools
         DataColumn column = new DataColumn("Eval", typeof(int), expression);
         table.Columns.Add(column);
         table.Rows.Add(0);
-        
+
         // Récupérer le résultat et le convertir en entier
         int result = Convert.ToInt32(table.Rows[0]["Eval"]);
-        
+
         return result;
     }
 
@@ -41,10 +41,11 @@ public class Tools
         {
             return false;
         }
+
         return true;
     }
-    
-    
+
+
     // Méthode pour générer des nombres aléatoires
     public static List<int> GenerateNumbers(int count, int min, int max)
     {
@@ -54,6 +55,12 @@ public class Tools
         {
             numbers.Add(_random.Next(min, max));
         }
+
         return numbers;
+    }
+
+    public static int suggest(int targetNumber, List<int> numbers)
+    {
+        return 1;
     }
 }

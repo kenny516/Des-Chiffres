@@ -3,28 +3,25 @@
 }
 <main ng-controller="GameController" class="mt-5 flex h-full w-full flex-col items-center gap-5">
     <h1 class="text-center text-5xl text-black">
-        DECHIFFRE CE NOMBRE
+        DECHIFFRAGE DU NOMBRE
     </h1>
     <div class="flex w-full justify-center">
         <div>
             <form class="grid-cols-4 grid gap-8">
-                <label>Nombre</label>
-                <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="numbers[0]">
-                <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="numbers[1]">
-                <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="numbers[2]">
-                <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="numbers[3]">
-                <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="numbers[4]">
-                <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="numbers[5]">
-                <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl"  type="number" ng-model="numbers[6]">
-                <label>Target</label>
+                <label>Nombres</label>
+                <div ng-repeat="number in numbers">
+                    <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="number">
+                </div>
+                <label>Target Number</label>
                 <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="target">
                 <button class="flex h-10 w-60 items-center justify-center rounded-2xl border border-sky-500 bg-sky-500 text-white" ng-click="submitForm()">
-                    Submit
+                    Valider
                 </button>
             </form>
-            
+
         </div>
     </div>
+    <!-- Affichage Nombres et target  -->
     <div class="mt-5 flex h-10 w-60 items-center justify-center rounded-xl border border-sky-500 text-2xl">
         {{game.targetNumber}}
     </div>
@@ -33,19 +30,24 @@
             {{number}}
         </div>
     </div>
-
-
     <!-- chrono -->
     <div class="text-4xl font-semibold">
         <p>{{ timeFormat}}</p>
     </div>
-
+    <!-- Formulaire pour les joueur -->
     <section class="grid-cols-2 grid gap-8">
         <div class="rounded-2xl bg-sky-800" ng-repeat="player in game.players" ng-init="submitshow = true">
-            <form class="flex h-80 w-80 flex-col items-center gap-10 rounded-2xl pb-8 pt-8" >
+            <form class="flex h-80 w-80 flex-col items-center gap-10 rounded-2xl pb-8 pt-8">
                 <label class="underline-offset-8 text-xl text-white underline">Name :{{player.name}}</label>
                 <label class="underline-offset-8 text-xl text-white">Point : {{player.point}}</label>
                 <input class="w-50 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="player.NbrChoice">
+                <input class="w-50 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="player.NbrChoice">
+                <div class="flex w-full justify-center">
+                    <button ng-click="suggest($index)"  
+                        class="h-10 w-1/2 rounded-2xl border border-sky-500 bg-sky-500 text-white">
+                        SUGGERER
+                    </button>
+                </div>
                 <div class="flex w-full justify-center" ng-show="submitshow">
                     <button ng-click="submitResults($index); submitshow = false" class="h-10 w-1/2 rounded-2xl border border-sky-500 bg-sky-500 text-white" type="submit">
                         VALIDER
