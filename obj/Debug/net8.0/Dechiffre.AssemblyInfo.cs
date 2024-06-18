@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dechiffre")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55a5981a69cc8aee2b9b5e15ac9f1edfb25c6dc1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a28b20bd14ac0aa0991ada8a7622ca304e60891")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dechiffre")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dechiffre")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
