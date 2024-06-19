@@ -7,16 +7,26 @@
     </h1>
     <div class="flex w-full justify-center">
         <div>
-            <form class="grid-cols-4 grid gap-8">
-                <label>Nombres</label>
-                <div ng-repeat="number in numbers">
-                    <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="number">
+            <form class="grid gap-4">
+                <label class="flex justify-center font-bold text-xl text-blue-950">Nombres</label>
+                <div class="grid-cols-7 grid gap-5">
+                    <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="Formnumbers[0]">
+                    <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="Formnumbers[1]">
+                    <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="Formnumbers[2]">
+                    <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="Formnumbers[3]">
+                    <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="Formnumbers[4]">
+                    <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="Formnumbers[5]">
+                    <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="Formnumbers[6]">
                 </div>
-                <label>Target Number</label>
-                <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="target">
-                <button class="flex h-10 w-60 items-center justify-center rounded-2xl border border-sky-500 bg-sky-500 text-white" ng-click="submitForm()">
-                    Valider
-                </button>
+                <label class="flex justify-center font-bold text-xl text-blue-950">Target Number</label>
+                <div class="flex justify-center">
+                    <input class="w-20 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="target">
+                </div>
+                <div class="flex justify-center">
+                    <button class="flex h-10 w-60 items-center justify-center rounded-2xl border border-sky-500 bg-sky-500 text-white" ng-click="submitForm()">
+                        Confirmer
+                    </button>
+                </div>
             </form>
 
         </div>
@@ -35,16 +45,15 @@
         <p>{{ timeFormat}}</p>
     </div>
     <!-- Formulaire pour les joueur -->
-    <section class="grid-cols-2 grid gap-8">
+    <section class="grid-cols-2 grid gap-6">
         <div class="rounded-2xl bg-sky-800" ng-repeat="player in game.players" ng-init="submitshow = true">
-            <form class="flex h-80 w-80 flex-col items-center gap-10 rounded-2xl pb-8 pt-8">
+            <form class="flex h-auto w-80 flex-col items-center gap-10 rounded-2xl pb-8 pt-8">
                 <label class="underline-offset-8 text-xl text-white underline">Name :{{player.name}}</label>
                 <label class="underline-offset-8 text-xl text-white">Point : {{player.point}}</label>
                 <input class="w-50 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="player.NbrChoice">
-                <input class="w-50 border-2 h-10 rounded-xl border-sky-500 text-center placeholder:text-2xl" type="number" ng-model="player.NbrChoice">
-                <div class="flex w-full justify-center">
-                    <button ng-click="suggest($index)"  
-                        class="h-10 w-1/2 rounded-2xl border border-sky-500 bg-sky-500 text-white">
+                <div class="flex w-full justify-center" ng-show="submitshow">
+                    <button ng-click="suggestInputPlayer($index)"
+                            class="h-10 w-1/2 rounded-2xl border border-sky-500 bg-sky-500 text-white">
                         SUGGERER
                     </button>
                 </div>

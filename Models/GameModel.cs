@@ -20,13 +20,15 @@
 
             // Cast de Value_verify en int
             int valueVerifyAsInt = Convert.ToInt32(Value_verify);
-            Console.WriteLine("Nbr taped =>"+Players[Idwinner_not_verify].nbrChoice+" et verify nbr =>" + valueVerifyAsInt);
+            Console.WriteLine("Nbr taped =>" + Players[Idwinner_not_verify].nbrChoice + " et verify nbr =>" +
+                              valueVerifyAsInt);
 
             if (Players[Idwinner_not_verify].nbrChoice == valueVerifyAsInt)
             {
                 Players[Idwinner_not_verify].point++;
                 return Players[Idwinner_not_verify];
             }
+
             int otherPlayerId = (Idwinner_not_verify + 1) % Players.Count;
             Players[otherPlayerId].point++;
             return Players[otherPlayerId];
@@ -65,25 +67,26 @@
         }
 
         // Vérifier si les deux joueurs ont des choix positifs (on tous les deux commiter)
-        private  bool AreBothChoicesPositive(Player j1, Player j2)
+        private bool AreBothChoicesPositive(Player j1, Player j2)
         {
             return j1.nbrChoice > 0 && j2.nbrChoice > 0;
         }
 
 // Déterminer le joueur le plus proche du nombre cible
-        private  int DetermineClosestPlayer(int diff1, int diff2, Player j1, Player j2)
+        private int DetermineClosestPlayer(int diff1, int diff2, Player j1, Player j2)
         {
             if (diff1 < diff2)
             {
                 return 0; // j1 plus proche
             }
+
             if (diff1 > diff2)
             {
                 return 1; // j2 plus proche
             }
+
             // Les deux joueurs sont à égale distance du nombre cible
             return j1.temps < j2.temps ? 0 : 1;
-                
         }
     }
 }

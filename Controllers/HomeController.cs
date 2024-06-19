@@ -17,6 +17,7 @@ namespace Dechiffre.Controllers
         {
             return View();
         }
+
         public IActionResult Home()
         {
             return View();

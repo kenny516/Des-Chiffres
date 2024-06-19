@@ -1,4 +1,6 @@
-﻿app.config(function ($routeProvider) {
+﻿
+var app = angular.module('dechiffreApp', ['ngRoute']);
+app.config(function ($routeProvider) {
     $routeProvider
         .when('/homepage', {
             templateUrl: '/Home/Index'

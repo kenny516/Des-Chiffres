@@ -12,13 +12,13 @@ namespace DesChiffres.Controllers
         {
             List<Player> players = new List<Player>
             {
-                new Player { name = "player 1", temps = 0, nbrChoice = -1 ,point = 0},
-                new Player { name = "player 2", temps = 0, nbrChoice = -1 ,point = 0}
+                new Player { name = "player 1", temps = 0, nbrChoice = -1, point = 0 },
+                new Player { name = "player 2", temps = 0, nbrChoice = -1, point = 0 }
             };
 
             GameModel? game = new GameModel
             {
-                TargetNumber = 0,
+                TargetNumber = _random.Next(100,1001),
                 Numbers = Tools.GenerateNumbers(7, 1, 101),
                 Players = players,
                 Winner_not_verify = 10,
@@ -32,8 +32,6 @@ namespace DesChiffres.Controllers
         {
             return Json(Tools.EvaluateExpression(eval));
         }
-
-
 
 
         [HttpPost("api/game/newGame")]
@@ -50,7 +48,6 @@ namespace DesChiffres.Controllers
             game.Numbers = Tools.GenerateNumbers(7, 1, 101);
             return Json(game);
         }
-        
 
         [HttpPost("api/game/submitresults")]
         public JsonResult SubmitResults([FromBody] GameModel game)
@@ -60,10 +57,20 @@ namespace DesChiffres.Controllers
 
             // Déterminer le gagnant en fonction des choix des joueurs
             game.DetermineWinner(game);
-            Console.WriteLine("winer not verifyyy "+game.Winner_not_verify);
+            Console.WriteLine("winer not verifyyy " + game.Winner_not_verify);
 
             return Json(game);
-        } 
+        }
+
+        [HttpPost("api/game/suggest")]
+        public JsonResult suggesInput([FromBody] GameModel game)
+        {
+            (int nemberSugges, string operation) = Tools.FindClosestNumber(game.Numbers.ToArray(), game.TargetNumber);
+            Console.WriteLine("suggestion =>"+operation);
+            return Json((nemberSugges, operation));
+        }
+
+
 // Logique pour déterminer le gagnant
         [HttpPost("api/game/verify")]
         public JsonResult Verify([FromBody] GameModel game)
@@ -76,8 +83,8 @@ namespace DesChiffres.Controllers
         {
             return View();
         }
-        
-        
+
+
 ////    FONCTION 
 // Fonction pour afficher les données du jeu
         private void LogGameData(GameModel game)
@@ -89,6 +96,7 @@ namespace DesChiffres.Controllers
             {
                 Console.WriteLine(number);
             }
+
             Console.WriteLine("Players ///////////////////////");
             foreach (var player in game.Players)
             {
@@ -96,11 +104,8 @@ namespace DesChiffres.Controllers
                 Console.WriteLine("Player Temps : " + player.temps);
                 Console.WriteLine("Player NbrChoice : " + player.nbrChoice);
             }
+
             Console.WriteLine("///////////////////////");
         }
-        
-
-
     }
-
 }

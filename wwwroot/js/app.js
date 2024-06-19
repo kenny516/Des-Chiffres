@@ -1,4 +1,4 @@
-﻿var app = angular.module('dechiffreApp', ['ngRoute']);
+var app = angular.module('dechiffreApp', ['ngRoute']);
 
 
 app.controller('GameController', function ($scope, $interval, $http) {
@@ -14,37 +14,50 @@ app.controller('GameController', function ($scope, $interval, $http) {
     $scope.finishGame = false;
     $scope.playerWin = null;
 
+    //load game
     $http.get('/api/game/index').then(function (response) {
         $scope.game = response.data;
         $scope.choice = angular.copy($scope.game.numbers);
     });
-    
+    //load suggestion
+    $scope.suggestInput = function () {
+        $http.post("api/game/suggest", $scope.game).then(function (response) {
+            console.log("Suggestion received");
+            $scope.suggestion = response.data;
+            // Afficher les résultats dans l'interface utilisateur
+            $scope.suggestedNumber = response.data.numberSugges;
+            $scope.suggestedOperation = response.data.operation;
+        }, function (error) {
+            console.error("Error fetching suggestion", error);
+        });
+    };
+
     $scope.Formtarget = 0;
     $scope.Formnumbers = new Array(7);
 
-    $scope.submitForm = function() {
+    $scope.submitForm = function () {
         $scope.game.targetNumber = $scope.Formtarget;
         for (let i = 0; i < $scope.game.numbers; i++) {
-            $scope.game.numbers[i] =  angular.copy($scope.Formnumbers[i]);    
+            $scope.game.numbers[i] = angular.copy($scope.Formnumbers[i]);
         }
-        
+
         $scope.game.players[0].nbrChoice = -1;
         $scope.game.players[1].nbrChoice = -1;
         $scope.game.players[0].temps = 0;
         $scope.game.players[1].temps = 0;
         $scope.game.winner_not_verify = 10;
         $scope.game.value_verify = 0;
-        
-        
+
+
         $scope.verifChoice = "";
         $scope.finishGame = false;
         $scope.playerWin = null;
         $scope.timeLeft = chronoInit;
         $scope.choice = angular.copy($scope.numbers);
         $scope.isTimeUp = false;
-        
-        
-        console.log("changer"+$scope.choice);
+
+
+        console.log("changer" + $scope.choice);
     };
 
     var timer = $interval(function () {
@@ -52,10 +65,10 @@ app.controller('GameController', function ($scope, $interval, $http) {
             $scope.timeFormat = formatTime($scope.timeLeft);
             $scope.timeLeft--;
             $scope.timeFormat = formatTime($scope.timeLeft);
-        }else if ($scope.timeLeft === 0){
+        } else if ($scope.timeLeft === 0) {
             $scope.timeFormat = formatTime($scope.timeLeft);
             $scope.isTimeUp = true;
-/*            $interval.cancel(timer);*/
+            /*            $interval.cancel(timer);*/
             $scope.timeIsUpFunction();
         }
     }, 1000);
@@ -63,7 +76,7 @@ app.controller('GameController', function ($scope, $interval, $http) {
     // fontion valider reponse d un joueur
     $scope.submitResults = function (playerIndex) {
         $scope.game.players[playerIndex].Temps = chronoInit - $scope.timeLeft; // Calculer le temps de soumission pour le joueur
-        if ($scope.game.players[0].Temps > 0 && $scope.game.players[1].Temps > 0){
+        if ($scope.game.players[0].Temps > 0 && $scope.game.players[1].Temps > 0) {
             $scope.timeLeft = 0;
             console.log("end time")
         }
@@ -115,6 +128,18 @@ app.controller('GameController', function ($scope, $interval, $http) {
         });
     }
 
+
+
+});
+
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${String(remainingSeconds).padStart(2, '0')}`;
+}
+
+
 /*    $scope.callEval = function () {
         const encodeString = encodeURIComponent($scope.verifChoice)
         return $http.get('api/game/eval/?eval=' + encodeString)
@@ -127,16 +152,6 @@ app.controller('GameController', function ($scope, $interval, $http) {
                 throw error;
             });
     };*/
-
-});
-
-
-function formatTime(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes}:${String(remainingSeconds).padStart(2, '0')}`;
-}
-
 
 
 

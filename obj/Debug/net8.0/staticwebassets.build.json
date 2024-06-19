@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RDHk4XI9KX+wJA2eVYB0FHxCWPpxVukosvPqopiXXtI=",
+  "Hash": "z/4KhZRR+PwnSba3appc0Xf6j6Xu0lvMv1XCTigMhvM=",
   "Source": "Dechiffre",
   "BasePath": "_content/Dechiffre",
   "Mode": "Default",
@@ -131,12 +131,12 @@
       "OriginalItemSpec": "wwwroot\\js\\app.js"
     },
     {
-      "Identity": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\js\\Helper.js",
+      "Identity": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\js\\app\\app.js",
       "SourceId": "Dechiffre",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\",
       "BasePath": "_content/Dechiffre",
-      "RelativePath": "js/Helper.js",
+      "RelativePath": "js/app/app.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -147,15 +147,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\Helper.js"
+      "OriginalItemSpec": "wwwroot\\js\\app\\app.js"
     },
     {
-      "Identity": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\js\\site.js",
+      "Identity": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\js\\app\\controller\\gameController.js",
       "SourceId": "Dechiffre",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\",
       "BasePath": "_content/Dechiffre",
-      "RelativePath": "js/site.js",
+      "RelativePath": "js/app/controller/gameController.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -166,7 +166,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
+      "OriginalItemSpec": "wwwroot\\js\\app\\controller\\gameController.js"
+    },
+    {
+      "Identity": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\js\\app\\service\\gameService.js",
+      "SourceId": "Dechiffre",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\",
+      "BasePath": "_content/Dechiffre",
+      "RelativePath": "js/app/service/gameService.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\app\\service\\gameService.js"
     },
     {
       "Identity": "D:\\S4\\MrTahina\\Des-Chiffres\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
