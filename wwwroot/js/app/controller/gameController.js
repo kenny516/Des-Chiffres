@@ -15,15 +15,15 @@ app.controller('GameController', ['$scope', '$interval', 'GameService', function
         $scope.choice = angular.copy($scope.game.numbers);
         console.log("Game loaded")
         // Load suggestion
-        GameService.suggestInput($scope.game).then(function (response) {
-            console.log("Suggestion received");
-            $scope.suggestion = response.data;
-            $scope.suggestedNumber = response.data.numberSugges;
-            $scope.suggestedOperation = response.data.operation;
-            console.log("Suggest loaded")
-        }, function (error) {
-            console.error("Error fetching suggestion", error);
-        });
+    });
+    GameService.suggestInput($scope.game).then(function (response) {
+        console.log("Suggestion received");
+        $scope.suggestion = response.data;
+        $scope.suggestedNumber = response.data.numberSugges;
+        $scope.suggestedOperation = response.data.operation;
+        console.log("Suggest loaded")
+    }, function (error) {
+        console.error("Error fetching suggestion", error);
     });
     
     var timer = $interval(function () {
