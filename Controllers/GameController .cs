@@ -65,9 +65,10 @@ namespace DesChiffres.Controllers
         [HttpPost("api/game/suggest")]
         public JsonResult suggesInput([FromBody] GameModel game)
         {
-            (int nemberSugges, string operation) = Tools.FindClosestNumber(game.Numbers.ToArray(), game.TargetNumber);
+            (int numberSugges, string operation) = new Tools().FindClosestNumber(game.Numbers, game.TargetNumber);
             Console.WriteLine("suggestion =>"+operation);
-            return Json((nemberSugges, operation));
+
+            return Json(new {numberSugges=ExpressionCalculator.FindClosestExpressions(game.TargetNumber,game.Numbers.ToArray(),3)});
         }
 
 

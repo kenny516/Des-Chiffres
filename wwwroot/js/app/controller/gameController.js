@@ -1,4 +1,4 @@
-app.controller('GameController', ['$scope', '$interval', 'GameService', function ($scope, $interval, GameService) {
+app.controller('GameControllerANG', ['$scope', '$interval', 'GameService', function ($scope, $interval, GameService) {
     const chronoInit = 20;
     $scope.timeLeft = chronoInit;
     $scope.timeFormat = formatTime($scope.timeLeft);
@@ -16,16 +16,7 @@ app.controller('GameController', ['$scope', '$interval', 'GameService', function
         console.log("Game loaded")
         // Load suggestion
     });
-    GameService.suggestInput($scope.game).then(function (response) {
-        console.log("Suggestion received");
-        $scope.suggestion = response.data;
-        $scope.suggestedNumber = response.data.numberSugges;
-        $scope.suggestedOperation = response.data.operation;
-        console.log("Suggest loaded")
-    }, function (error) {
-        console.error("Error fetching suggestion", error);
-    });
-    
+
     var timer = $interval(function () {
         if ($scope.timeLeft > 0) {
             $scope.timeLeft--;
@@ -35,16 +26,8 @@ app.controller('GameController', ['$scope', '$interval', 'GameService', function
             $scope.timeIsUpFunction();
         }
     }, 1000);
-    
 
-    $scope.suggestInputPlayer = function(playerIndex) {
-        $scope.game.players[playerIndex].nbrChoice = $scope.suggestedNumber;
-        console.log("charger dans le input du joueur")
-    }
-    $scope.suggestVerif = function(playerIndex) {
-        $scope.verifChoice = $scope.suggestedOperation;
-        console.log("charger dans le verifiaction du joueur")
-    }
+1
     
     $scope.Formtarget = 0;
     $scope.Formnumbers = new Array(7);
@@ -65,12 +48,21 @@ app.controller('GameController', ['$scope', '$interval', 'GameService', function
         $scope.finishGame = false;
         $scope.playerWin = null;
         $scope.timeLeft = chronoInit;
-        $scope.choice = angular.copy($scope.numbers);
+        $scope.choice = angular.copy($scope.game.numbers);
         $scope.isTimeUp = false;
-
         console.log("change game data" + $scope.choice);
-    };
+        // Initialize the variables
+        $scope.suggestedNumber = '';
+        $scope.suggestedOperation = '';
+        GameService.suggestInput($scope.game).then(function (response) {
+            console.log("Suggestion received");
 
+            $scope.suggestedOperation  = response.data.numberSugges;
+            console.log("Suggest loaded" + $scope.suggestedNumber)
+        }, function (error) {
+            console.error("Error fetching suggestion", error);
+        });
+    };
 
 
     $scope.submitResults = function (playerIndex) {
@@ -80,6 +72,15 @@ app.controller('GameController', ['$scope', '$interval', 'GameService', function
             console.log("end time");
         }
     };
+    $scope.suggestInputPlayer = function (playerIndex) {
+        $scope.game.players[playerIndex].NbrChoice = $scope.suggestedNumber;
+        console.log("charger dans le input du joueur")
+    }
+    $scope.suggestVerif = function () {
+        $scope.verifChoice = $scope.suggestedOperation;
+        console.log("charger dans le verifiaction du joueur")
+    }
+
 
     $scope.newGame = function () {
         GameService.newGame($scope.game).then(function (response) {

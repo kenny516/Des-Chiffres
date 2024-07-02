@@ -19,18 +19,7 @@ app.controller('GameController', function ($scope, $interval, $http) {
         $scope.game = response.data;
         $scope.choice = angular.copy($scope.game.numbers);
     });
-    //load suggestion
-    $scope.suggestInput = function () {
-        $http.post("api/game/suggest", $scope.game).then(function (response) {
-            console.log("Suggestion received");
-            $scope.suggestion = response.data;
-            // Afficher les résultats dans l'interface utilisateur
-            $scope.suggestedNumber = response.data.numberSugges;
-            $scope.suggestedOperation = response.data.operation;
-        }, function (error) {
-            console.error("Error fetching suggestion", error);
-        });
-    };
+
 
     $scope.Formtarget = 0;
     $scope.Formnumbers = new Array(7);
@@ -53,9 +42,20 @@ app.controller('GameController', function ($scope, $interval, $http) {
         $scope.finishGame = false;
         $scope.playerWin = null;
         $scope.timeLeft = chronoInit;
-        $scope.choice = angular.copy($scope.numbers);
+        $scope.choice = angular.copy($scope.game.numbers);
         $scope.isTimeUp = false;
-
+        //load suggestion
+        $scope.suggestInput = function () {
+            $http.post("api/game/suggest", $scope.game).then(function (response) {
+                console.log("Suggestion received");
+                $scope.suggestion = response.data;
+                // Afficher les résultats dans l'interface utilisateur
+                $scope.suggestedNumber = response.data.numberSugges;
+                $scope.suggestedOperation = response.data.operation;
+            }, function (error) {
+                console.error("Error fetching suggestion", error);
+            });
+        };
 
         console.log("changer" + $scope.choice);
     };
